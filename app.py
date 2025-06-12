@@ -684,6 +684,11 @@ async def query_knowledge_base(request: QueryRequest):
             content={"error": error_msg}
         )
 
+@app.get("/")
+def root():
+    return {"message": "TDS Virtual TA API is running. Use /query endpoint to post queries."}
+
+
 # Health check endpoint
 @app.get("/health")
 async def health_check():
